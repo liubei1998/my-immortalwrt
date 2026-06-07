@@ -381,8 +381,19 @@
 			#size-cells = <1>;
 
 			partition@0 {
+				label = "rootfs_1";
+				reg = <0x00000000 0x03c00000>;
+				read-only;
+			};
+
+			partition@3c00000 {
 				label = "rootfs";
-				reg = <0x0 0x0>;
+				reg = <0x03c00000 0x03c00000>;
+			};
+
+			partition@7800000 {
+				label = "data";
+				reg = <0x07800000 0x08800000>;
 			};
 		};
 	};
